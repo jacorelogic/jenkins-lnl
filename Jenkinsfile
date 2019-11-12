@@ -11,5 +11,10 @@ pipeline {
         echo 'Hello World'
       }
     }
+    stage('Build') {
+      steps {
+        sh './gradlew build -x test'
+      }
+    }
   }
 }
