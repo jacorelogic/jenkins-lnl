@@ -20,6 +20,7 @@ pipeline {
       steps {
         sh './gradlew test'
         junit 'build/test-results/**/*.xml'
+        archiveArtifacts(artifacts: 'build/libs/*.jar', fingerprint: true, onlyIfSuccessful: true)
       }
     }
   }
