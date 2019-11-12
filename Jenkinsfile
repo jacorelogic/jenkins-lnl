@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh './gradlew test'
+        sh './scripts/run_tests.sh'
         junit 'build/test-results/**/*.xml'
         archiveArtifacts(artifacts: 'build/libs/*.jar', fingerprint: true, onlyIfSuccessful: true)
       }
